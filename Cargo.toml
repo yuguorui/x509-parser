@@ -30,7 +30,7 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-default = []
+default = ["verify"]
 verify = ["ring"]
 
 [dependencies]
@@ -39,9 +39,9 @@ chrono = { version="0.4", default-features=false, features=["std"] }
 data-encoding = "2.2.1"
 lazy_static = "1.4"
 nom = "6.0"
-oid-registry = { version="0.1.1", features=["crypto", "x509"] }
-rusticata-macros = "3.0"
+oid-registry = { git="https://github.com/yuguorui/oid-registry.git", features=["crypto", "x509"] }
+rusticata-macros = {git="https://github.com/yuguorui/rusticata-macros.git"}
 ring = { version="0.16", optional=true }
 rustversion = "1.0"
-der-parser = { version = "5.0", features=["bigint"] }
+der-parser = { git="https://github.com/yuguorui/der-parser.git", features=["bigint"], default-features=false }
 thiserror = "1.0"
